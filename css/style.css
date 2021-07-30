@@ -7,6 +7,7 @@
 
 html {
   font-family: 'Kumbh Sans', sans-serif;
+  scroll-behavior: smooth;
 }
 
 ul[class],
@@ -40,6 +41,14 @@ body {
   display: -ms-grid;
   display: grid;
   place-items: center;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+@media (max-width: 420px) {
+  body {
+    padding-block: 9rem;
+  }
 }
 
 .container {
@@ -54,15 +63,31 @@ body {
   border-radius: 20px;
 }
 
+@media (max-width: 420px) {
+  .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 135px 1fr;
+        grid-template-rows: 135px 1fr;
+    max-width: 340px;
+    min-height: 574px;
+    border-radius: 25px;
+  }
+}
+
 .image {
   overflow: hidden;
   position: relative;
 }
 
-.image .image__bg {
+.image .image__bg_desktop {
   position: absolute;
   top: -70%;
   left: -119%;
+}
+
+.image .image__bg_mobile {
+  display: none;
 }
 
 .image .image__main_desktop {
@@ -75,6 +100,30 @@ body {
   display: none;
 }
 
+@media (max-width: 420px) {
+  .image {
+    overflow: unset;
+  }
+  .image .image__bg_desktop {
+    display: none;
+  }
+  .image .image__bg_mobile {
+    display: block;
+    position: absolute;
+    top: 0%;
+    left: 15%;
+  }
+  .image .image__main_desktop {
+    display: none;
+  }
+  .image .image__main_mobile {
+    display: block;
+    position: absolute;
+    top: -80%;
+    left: 7%;
+  }
+}
+
 .accordion {
   padding: 4rem 4rem 3rem 0;
 }
@@ -84,9 +133,19 @@ body {
   padding-bottom: 1rem;
 }
 
+@media (max-width: 420px) {
+  .accordion {
+    padding: 0rem 1.5rem 3rem 1.5rem;
+  }
+  .accordion h1 {
+    text-align: center;
+  }
+}
+
 .accordion__content {
   padding: 1rem 1rem 0 0;
   border-bottom: 1px solid #e7e7e9;
+  width: 335px;
 }
 
 .accordion__content .accordion__question {
@@ -98,7 +157,6 @@ body {
           justify-content: space-between;
   cursor: pointer;
   padding-bottom: 1rem;
-  width: 335px;
 }
 
 .accordion__content .accordion__question h2 {
@@ -146,9 +204,32 @@ body {
   display: block;
 }
 
+@media (max-width: 420px) {
+  .accordion__content {
+    padding: 1.5rem 0rem 0rem 0rem;
+    width: 292px;
+  }
+}
+
 .box {
   position: absolute;
   top: 41%;
   left: -11%;
+}
+
+@media (max-width: 420px) {
+  .box {
+    display: none;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding-top: 45px;
+}
+
+.attribution a {
+  color: #1d1e35;
 }
 /*# sourceMappingURL=style.css.map */

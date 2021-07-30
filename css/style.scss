@@ -10,6 +10,9 @@ $text-answer-lightgrey: hsl(240, 6%, 50%);
 
 $divider-greyishblue: hsl(240, 5%, 91%);
 
+//Media Query
+$width: 420px;
+
 //CSS RESET
 *,
 *::before,
@@ -19,6 +22,7 @@ $divider-greyishblue: hsl(240, 5%, 91%);
 
 html{
     font-family: 'Kumbh Sans', sans-serif;
+    scroll-behavior: smooth;
 }
 
 ul[class],
@@ -52,6 +56,13 @@ body{
 
     display: grid;
     place-items: center;
+
+    grid-template-rows: 1fr;
+
+    @media (max-width: $width){
+        padding-block: 9rem;
+    }
+    
 }
 
 .container{
@@ -64,16 +75,27 @@ body{
     max-width: 890px;
     min-height: 475px;
     border-radius: 20px;
+
+    @media (max-width: $width){
+        grid-template-columns: 1fr;
+        grid-template-rows: 135px 1fr;
+        max-width: 340px;
+        min-height: 574px;
+        border-radius: 25px;
+    }
 }
 
 .image{
     overflow: hidden;
     position: relative;
     
-    .image__bg{
+    .image__bg_desktop{
         position: absolute;
         top:-70%;
         left: -119%;
+    }
+    .image__bg_mobile{
+        display: none;
     }
     .image__main_desktop{
         position: absolute;
@@ -83,6 +105,28 @@ body{
     .image__main_mobile{
         display: none;
     }
+
+    @media (max-width: $width){
+        overflow: unset;
+        .image__bg_desktop{
+            display: none;
+        }
+        .image__bg_mobile{
+            display: block;
+            position: absolute;
+            top: 0%;
+            left: 15%;
+        }
+        .image__main_desktop{
+            display: none;
+        }
+        .image__main_mobile{
+            display: block;
+            position: absolute;
+            top: -80%;
+            left: 7%;
+        }
+    }
 }
 
 .accordion{
@@ -91,12 +135,22 @@ body{
         color: $heading-text-DarkBlue;
         padding-bottom: 1rem;
     }
+
+    @media (max-width: $width){
+        padding: 0rem 1.5rem 3rem 1.5rem;
+
+        h1{
+            text-align: center;
+        }
+    }
 }
 
 .accordion__content{
     padding: 1rem 1rem 0 0;
 
     border-bottom: 1px solid $divider-greyishblue;
+
+    width: 335px;
 
     .accordion__question{
         display: flex;
@@ -106,7 +160,7 @@ body{
 
         padding-bottom: 1rem; 
 
-        width: 335px;
+        
 
         h2{
             font-size: 13px;
@@ -151,10 +205,33 @@ body{
     .accordion__answer_active{
         display: block;
     }
+
+    @media (max-width: $width){
+        padding: 1.5rem 0rem 0rem 0rem;
+
+        width: 292px;
+
+    }
 }
 
 .box{
     position: absolute;
     top: 41%;
     left: -11%;
+
+    @media (max-width: $width){
+        display: none;
+    }
 }
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+
+    padding-top: 45px;
+
+    a { 
+        color: $heading-text-DarkBlue;
+    }
+}
+
