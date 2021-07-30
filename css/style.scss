@@ -1,0 +1,160 @@
+// COLORS
+$heading-text-DarkBlue: hsl(238, 29%, 16%);
+$arrow-SoftRed: hsl(14, 88%, 65%);
+
+$bg-grad-SoftViolet: hsl(273, 75%, 66%);
+$bg-grad-Softblue: hsl(240, 73%, 65%);
+
+$text-question-darkgrey: hsl(237, 12%, 33%);
+$text-answer-lightgrey: hsl(240, 6%, 50%);
+
+$divider-greyishblue: hsl(240, 5%, 91%);
+
+//CSS RESET
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html{
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+// ***
+body{
+    background: linear-gradient($bg-grad-SoftViolet, $bg-grad-Softblue);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
+    display: grid;
+    place-items: center;
+}
+
+.container{
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 480px 1fr;
+
+    background-color: #fff;
+    max-width: 890px;
+    min-height: 475px;
+    border-radius: 20px;
+}
+
+.image{
+    overflow: hidden;
+    position: relative;
+    
+    .image__bg{
+        position: absolute;
+        top:-70%;
+        left: -119%;
+    }
+    .image__main_desktop{
+        position: absolute;
+        top: 10%;
+        left: -16%;
+    }
+    .image__main_mobile{
+        display: none;
+    }
+}
+
+.accordion{
+    padding: 4rem 4rem 3rem 0;
+    h1{
+        color: $heading-text-DarkBlue;
+        padding-bottom: 1rem;
+    }
+}
+
+.accordion__content{
+    padding: 1rem 1rem 0 0;
+
+    border-bottom: 1px solid $divider-greyishblue;
+
+    .accordion__question{
+        display: flex;
+        justify-content: space-between;
+
+        cursor: pointer;
+
+        padding-bottom: 1rem; 
+
+        width: 335px;
+
+        h2{
+            font-size: 13px;
+            font-weight: 400;
+            color: $text-question-darkgrey;
+        }
+
+        img{
+            align-self: center;
+
+            transition: transform 150ms ease-in-out;
+        }
+
+        &:hover{
+            h2{
+                color: $arrow-SoftRed;
+            }
+        }
+    }
+
+    .accordion__question_active{
+        h2{
+            font-weight: 700;
+            color: $heading-text-DarkBlue;
+        }
+        img{
+            transform: rotate(180deg);
+        }
+    }
+
+    .accordion__answer{
+        padding-bottom: 1rem;
+        display: none;
+
+        p{
+            font-size: 11px;
+            font-weight: 400;
+            color: $text-answer-lightgrey;
+        }
+    }
+
+    .accordion__answer_active{
+        display: block;
+    }
+}
+
+.box{
+    position: absolute;
+    top: 41%;
+    left: -11%;
+}
