@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [frontendmentor.io/solutions](https://www.frontendmentor.io/solutions/faq-accordion-using-scss-and-js-0V5ANA3i9)
+- Live Site URL: [flash54.github.io/FAQ-Accordion](https://flash54.github.io/FAQ-Accordion/)
 
 ## My process
 
