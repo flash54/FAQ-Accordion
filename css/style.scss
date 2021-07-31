@@ -179,6 +179,14 @@ body{
                 color: $arrow-SoftRed;
             }
         }
+
+        @media (max-width: $width){
+            &:hover{
+                h2{
+                    color: unset;
+                }
+            }
+        }
     }
 
     .accordion__question_active{

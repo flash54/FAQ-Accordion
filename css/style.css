@@ -179,6 +179,12 @@ body {
   color: #f47c57;
 }
 
+@media (max-width: 420px) {
+  .accordion__content .accordion__question:hover h2 {
+    color: unset;
+  }
+}
+
 .accordion__content .accordion__question_active h2 {
   font-weight: 700;
   color: #1d1e35;
